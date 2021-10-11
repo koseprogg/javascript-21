@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML</title>
+    <script type="application/javascript">
+      function init() {
+        document.getElementById("btn").addEventListener("click", () => {
+          alert("Hei! Dette ble utløst av et klikk");
+        });
+      }
+
+      /* 
+        Vi kan ikke legge til event listeners på elementer i DOM-en før 
+        DOM-en er ferdig lastet inn (readystate === complete).
+        Vi kjører derfor en initialiseringsfunksjon når den er klar.
+      */
+      document.addEventListener("readystatechange", function () {
+        if (document.readyState === "complete") {
+          init();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn">Klikk på meg</button>
+  </body>
+</html>
