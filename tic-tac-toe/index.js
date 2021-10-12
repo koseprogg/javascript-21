@@ -1,1 +1,1 @@
-// Her skal vi skrive koden vår
+// TODO: Spillogikk til tic tac toe
